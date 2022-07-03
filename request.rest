@@ -1,0 +1,15 @@
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "anam@gmail.com",
+    "password": "12345678",
+    "role": 1
+}
+
+###
+GET http://localhost:5000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJhbmFtIiwiZW1haWwiOiJhbmFtQGdtYWlsLmNvbSIsInJvbGUiOjEsImlhdCI6MTY1Njg4MDE3OCwiZXhwIjoxNjU2ODgwMTk4fQ.gaTWPtfwdUI3J8Rqo9SqHGatvOl1LTvRJqiJ-3VL7_k
+
+###
+GET http://localhost:5000/token

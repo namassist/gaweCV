@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import express from "express";
 import db from "./config/Database.js";
+import cookieParser from "cookie-parser";
 import router from "./routes/index.js";
 dotenv.config();
 const app = express();
@@ -12,6 +13,7 @@ try {
   console.log(error);
 }
 
+app.use(cookieParser());
 app.use(express.json());
 app.use(router);
 

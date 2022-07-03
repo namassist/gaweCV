@@ -4,7 +4,9 @@ import jwt from "jsonwebtoken";
 
 export const getUsers = async (req, res) => {
   try {
-    const users = await Users.findAll();
+    const users = await Users.findAll({
+      attributes: ["id", "name", "email", "role"],
+    });
     res.json(users);
   } catch (error) {
     console.log(error);
@@ -51,7 +53,7 @@ export const login = async (req, res) => {
     const role = user[0].role;
 
     const accessToken = jwt.sign(
-      { userId, name, email },
+      { userId, name, email, role },
       process.env.ACCESS_TOKEN_SECRET,
       {
         expiresIn: "20s",

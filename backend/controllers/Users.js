@@ -85,6 +85,7 @@ export const login = async (req, res) => {
 
     res.json({ status: 200, accessToken });
   } catch (error) {
+    console.log(error);
     res.status(404).json({ status: 404, message: "user tidak ditemukan!" });
   }
 };

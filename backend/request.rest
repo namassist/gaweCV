@@ -1,18 +1,28 @@
 POST http://localhost:5000/login
 Content-Type: application/json
-
 {
     "email": "anam@gmail.com",
-    "password": "12345678",
-    "role": 1
+    "password": "12345678"
 }
 
 ###
 GET http://localhost:5000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJhbmFtIiwiZW1haWwiOiJhbmFtQGdtYWlsLmNvbSIsInJvbGUiOjEsImlhdCI6MTY1Njg4MDY0NSwiZXhwIjoxNjU2ODgwNjY1fQ.dYJZ-xhs0fTMBXC3m421OSs9ol1ritXw78I2QhbdBJs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJhbmFtIiwiZW1haWwiOiJhbmFtQGdtYWlsLmNvbSIsInJvbGUiOjEsImlhdCI6MTY1NjkzOTMyNywiZXhwIjoxNjU2OTM5MzQ3fQ.ZtywL8VPYnf711_CixYxxNOfW7I9Pui86DBwL2hJrJs
 
 ###
 GET http://localhost:5000/token
 
 ###
 DELETE  http://localhost:5000/logout
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "anam2",
+    "email": "anam@gmail.com",
+    "password": "12345678",
+    "confirmPassword": "12345678",
+    "role": 2
+}

@@ -7,13 +7,28 @@ const Users = db.define(
   "users",
   {
     name: {
+      allowNull: false,
       type: DataTypes.STRING,
+      unique: true,
+      validate: {
+        notEmpty: true,
+      },
     },
     email: {
+      allowNull: false,
       type: DataTypes.STRING,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
     },
     password: {
+      allowNull: false,
       type: DataTypes.STRING,
+      unique: true,
+      validate: {
+        notEmpty: true,
+      },
     },
     role: {
       type: DataTypes.INTEGER,
